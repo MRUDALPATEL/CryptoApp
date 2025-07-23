@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Menu, Typography, Avatar } from "antd";
+import { Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
 import {
   HomeOutlined,
@@ -12,6 +12,29 @@ import {
 import icon from "../assets/cryptocurrency.png";
 
 function Navbar() {
+  const menuItems = [
+    {
+      key: "home",
+      icon: <HomeOutlined />,
+      label: <Link to="/">Home</Link>,
+    },
+    {
+      key: "cryptocurrencies",
+      icon: <FundOutlined />,
+      label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
+    },
+    {
+      key: "exchanges",
+      icon: <MoneyCollectOutlined />,
+      label: <Link to="/exchanges">Exchanges</Link>,
+    },
+    {
+      key: "menu",
+      icon: <MenuOutlined />,
+      label: <Link to="/menu">Menu</Link>,
+    },
+  ];
+
   return (
     <div className="nav-container">
       <div className="logo-container">
@@ -20,26 +43,7 @@ function Navbar() {
           <Link to="/">CryptoApp</Link>
         </Typography.Title>
       </div>
-      <Menu theme="dark">
-        <Menu.Item icon={<HomeOutlined />}>
-          <Link to="/">Home</Link>
-        </Menu.Item>
-      </Menu>
-      <Menu theme="dark">
-        <Menu.Item icon={<FundOutlined />}>
-          <Link to="/cryptocurrencies">CryptoCurrency</Link>
-        </Menu.Item>
-      </Menu>
-      <Menu theme="dark">
-        <Menu.Item icon={<MoneyCollectOutlined />}>
-          <Link to="/exchanges">Exchanges</Link>
-        </Menu.Item>
-      </Menu>
-      <Menu theme="dark">
-        <Menu.Item icon={<MenuOutlined />}>
-          <Link to="/menu">Menu</Link>
-        </Menu.Item>
-      </Menu>
+      <Menu theme="dark" mode="vertical" items={menuItems} />
     </div>
   );
 }

@@ -2,7 +2,8 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
-import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News } from "./components";
+
+import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News, Footer } from "./components";
 
 function App() {
   return (
@@ -22,8 +23,10 @@ function App() {
             </Routes>
           </div>
         </Layout>
+      <div className="footer">
+        <Footer/>
       </div>
-      <div className="footer"></div>
+      </div>
     </div>
   );
 }
