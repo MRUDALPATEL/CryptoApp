@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
-import { Navbar } from "./components";
+import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News } from "./components";
 
 function App() {
   return (
