@@ -1,5 +1,5 @@
-import React from "react";
-import { Menu, Typography, Avatar } from "antd";
+import React, { useState, useEffect } from 'react';
+import { Button, Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
 import {
   HomeOutlined,
@@ -12,6 +12,28 @@ import {
 import icon from "../assets/cryptocurrency.png";
 
 function Navbar() {
+
+  const [activeMenu, setActiveMenu] = useState(true);
+  const [screenSize, setScreenSize] = useState(undefined);
+
+   useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 800) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
+
   const menuItems = [
     {
       key: "home",
@@ -23,15 +45,15 @@ function Navbar() {
       icon: <FundOutlined />,
       label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
     },
+    // {
+    //   key: "exchanges",
+    //   icon: <MoneyCollectOutlined />,
+    //   label: <Link to="/exchanges">Exchanges</Link>,
+    // },
     {
-      key: "exchanges",
-      icon: <MoneyCollectOutlined />,
-      label: <Link to="/exchanges">Exchanges</Link>,
-    },
-    {
-      key: "menu",
+      key: "news",
       icon: <MenuOutlined />,
-      label: <Link to="/menu">Menu</Link>,
+      label: <Link to="/news">News</Link>,
     },
   ];
 
@@ -42,8 +64,11 @@ function Navbar() {
         <Typography.Title level={2} className="logo">
           <Link to="/">CryptoApp</Link>
         </Typography.Title>
+         <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined /></Button>
       </div>
-      <Menu theme="dark" mode="vertical" items={menuItems} />
+      {activeMenu && (
+        <Menu theme="dark" mode="vertical" items={menuItems} />
+      )}
     </div>
   );
 }
