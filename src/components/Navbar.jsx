@@ -55,6 +55,11 @@ function Navbar() {
       icon: <MenuOutlined />,
       label: <Link to="/news">News</Link>,
     },
+    // {
+    //   key: "cryptochartpage.jsx",
+    //   icon: <MenuOutlined />,
+    //   label: <Link to="/cryptochartpage">News</Link>,
+    // },
   ];
 
   return (

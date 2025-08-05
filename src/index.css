@@ -10,6 +10,8 @@
    --border: #d9d9d9;
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -138,6 +140,7 @@ a:hover{
 
 .coin-detail-container{
     margin: 30px;
+    width: 90%;
 }
 
 .coin-heading-container{

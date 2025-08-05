@@ -7,16 +7,16 @@ function Footer() {
     <div>
       <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021
           <Link to="/">
-            Cryptoverse Inc.
+             CryptoApp
           </Link> <br />
-          All Rights Reserved.
+            All Rights Reserved.
         </Typography.Title>
         <Space>
           <Link to="/">Home</Link>
           <Link to="/exchanges">Exchanges</Link>
           <Link to="/news">News</Link>
         </Space>
-    </div>
+    </div> 
   )
 }
 

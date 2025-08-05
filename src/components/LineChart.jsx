@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Col, Row, Typography } from 'antd';
+import 'chartjs-adapter-date-fns';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -39,7 +40,7 @@ for (let i = 0; i < historyData.length; i++) {
   );
 }
 
-console.log(historyData);
+
 
   const data = {
     labels: coinTimestamp,
@@ -84,7 +85,7 @@ console.log(historyData);
           <Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Title>
         </Col>
       </Row>
-      <div style={{ height: '400px' }}>
+      <div className=" h-[400px] w-full">
         <Line data={data} options={options} />
       </div>
     </>

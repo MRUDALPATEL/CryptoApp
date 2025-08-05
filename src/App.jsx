@@ -3,7 +3,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
 
-import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News, Footer } from "./components";
+import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News, Footer, CryptoChartPage } from "./components";
+import LineChart from "./components/LineChart";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
               <Route path="/crypto/:coinId" element={<CryptoDetails />} />
               <Route path="/news" element={<News />} />
+              <Route path="/cryptodetails/:coinId" element={<CryptoDetails/>} />
             </Routes>
           </div>
         </Layout>
