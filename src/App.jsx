@@ -3,8 +3,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 
 
-import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News, Footer, CryptoChartPage } from "./components";
-import LineChart from "./components/LineChart";
+import { Navbar,Exchanges,HomePage,CryptoDetails,Cryptocurrencies,News, Footer,} from "./components";
+
 
 function App() {
   return (
